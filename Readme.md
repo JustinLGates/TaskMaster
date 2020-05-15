@@ -36,24 +36,24 @@ Dive right into the coding, it doesn't matter which step below you do first howe
 
 #### Visualization
 
-- All lists are Rendered on load/reload
-- Lists are displayed out in columns across the page
-- Lists and Items each have a delete button
-- Lists utilize form inputs so users can specify a name/title
-- Each List has a form so Items can be added to the List
+- [ ] All lists are Rendered on load/reload
+- [ ] Lists are displayed out in columns across the page
+- [ ] Lists and Items each have a delete button
+- [ ] Lists utilize form inputs so users can specify a name/title
+- [ ] Each List has a form so Items can be added to the List
 
 #### Functionality
 
-- Lists can be Created and Deleted
-- Items can be Created and Deleted
-- Data persists through local storage
-- Users are prompted to confirm any delete (search window.confirm)
+- [ ] Lists can be Created and Deleted
+- [ ] Items can be Created and Deleted
+- [ ] Data persists through local storage
+- [ ] Use a 'color' input so users can set the color for their list.
+- [ ] Users are prompted to confirm any delete (search window.confirm)
 
 <hr>
 
 ### Stretch Goals (Requirements first! Then stretch goals.)
 
-- Use a 'color' input so users can set the color for their list.
 - List items can be marked 'complete' separately from being deleted
 - Use something like masonry to render the lists more elegantly
 - Use a better popup then window.confirm for a more clean user experience (see the SweetAlertJS documentation for ideas on this)
