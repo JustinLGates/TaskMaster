@@ -1,3 +1,7 @@
+.mh-5 {
+  min-height: 10px !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -13,26 +17,6 @@ main {
   border-radius: 100%;
   width: 45px;
   height: 45px;
-}
-.tool-tip-show {
-  display: none;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.657);
-}
-
-.tool-tip-show:hover {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  display: inline;
-}
-.tool-tip-text {
-}
-
-.custom-color {
-  background-color: cornflowerblue;
-  width: 100%;
 }
 
 .delete-task:hover {
@@ -55,7 +39,7 @@ main {
   background: rgba(255, 255, 255, 0.685);
 }
 .delete-list-btn:hover {
-  transition: 0.4s;
+  transition: 0.3s;
   cursor: pointer;
   background: rgb(255, 255, 255);
   font-size: x-large;
@@ -63,4 +47,43 @@ main {
   right: -23px;
   min-width: 56px;
   min-height: 56px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

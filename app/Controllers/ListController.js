@@ -1,6 +1,5 @@
 import ListService from "../Services/ListService.js";
 import _Store from "../store.js";
-
 function _drawLists() {
   let template = "";
   _Store.State.lists.forEach((l) => (template += l.ListTemplate));
@@ -23,10 +22,10 @@ export default class ListController {
     event.target.reset();
   }
   deleteList(id) {
-    if (window.confirm("Are you sure you want to delete your list?")) {
-      ListService.deleteList(id);
-      _drawLists();
-    }
+    // if (window.confirm("Are you sure you want to delete your list?")) {
+    //   ListService.deleteList(id);
+    //   _drawLists();
+    // }
   }
   addTask(event, id) {
     event.preventDefault();

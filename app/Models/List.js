@@ -9,7 +9,7 @@ export default class List {
   }
 
   get ListTemplate() {
-    return `<div class="col-3-fluid card shadow bg-light text-dark m-3 ">
+    return `<div class=" card shadow bg-light text-dark m-3 ">
     <div >
   <p
     onclick="app.listController.deleteList('${this.id}')"

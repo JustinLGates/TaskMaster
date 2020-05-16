@@ -23,10 +23,9 @@
         </div>
       </div>
     </header>
-
     <main class="container-fluid bg-light text-primary">
-      <div class="row">
-        <div class="col d-flex justify-content-center maindiv">
+      <div class="row card shadow sticky-top bg-dark">
+        <div class="col d-flex justify-content-center">
           <form class="pt-3" onsubmit="app.listController.addList(event)">
             <div class="form-row align-items-center">
               <div class="col-auto">
@@ -45,38 +44,67 @@
                     class="color-picker"
                     value="#0275d8"
                     type="color"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Select list title color"
                     name="color"
                     id="color"
                   />
                 </div>
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-outline-success mb-2">
+                <button type="submit" class="btn btn-primary mb-2">
                   Add new list
                 </button>
               </div>
             </div>
           </form>
+          <div class="row mt-5 mh-5"><div class="col"></div></div>
         </div>
       </div>
-      <div id="lists" class="row d-flex justify-content-center"></div>
+      <div class="row d-flex justify-content-center mt-5">
+        <div class="col-12">
+          <div id="lists" class="card-columns"></div>
+        </div>
+      </div>
     </main>
-    <footer id="footer" class="text-primary footer container-fluid bg-dark">
+
+    <footer id="footer" class="text-light footer container-fluid bg-primary">
       <div class="row">
         <div class="col-12 m-auto text-center">
           <h3 class="pt-2">
             Made by Justin Gates
           </h3>
           <h3 class="p-1">
-            <i class="fab fa-linkedin px-2"><a href="#"></a></i>
+            <!-- <i class="fab fa-linkedin px-2"><a href="#"></a></i> -->
             <a href="https://github.com/JustinLGates">
-              <i class="text-primary fa fa-github px-2"></i
+              <i class="text-light fa fa-github px-2"></i
             ></a>
           </h3>
         </div>
       </div>
     </footer>
 
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
     <script src="app/main.js" type="module"></script>
   </body>
 </html>
