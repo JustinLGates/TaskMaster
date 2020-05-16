@@ -3,19 +3,21 @@ import { generateId } from "../utils.js";
 export default class List {
   constructor(data) {
     this.id = data.id || generateId();
+    this.titleColor = data.color;
     this.name = data.name;
     this.tasks = [];
   }
 
   get ListTemplate() {
-    return `<div class="col-3-fluid card shadow bg-light text-dark mt-4 ">
+    return `<div class="col-3-fluid card shadow bg-light text-dark m-3 ">
+    <div >
   <p
     onclick="app.listController.deleteList('${this.id}')"
     class="delete-list-btn text-danger shadow"
   >
     <i class="far fa-trash-alt"></i>
   </p>
-  <h3 class="custom-color text-light pl-3">${this.name}</h3>
+  <h3 style="background-color: ${this.titleColor};" class="  rounded-bottom text-light pl-3">${this.name}</h3>
   <div>
     <div >
       ${this.taskTemplate}
@@ -42,6 +44,7 @@ export default class List {
         </div>
       </div>
     </form>
+    </div>
   </div>
 </div>`;
   }

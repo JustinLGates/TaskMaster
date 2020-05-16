@@ -6,20 +6,42 @@ body {
 main {
   flex-grow: 1;
 }
+.color-picker {
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  margin-bottom: 8px;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+}
+.tool-tip-show {
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.657);
+}
+
+.tool-tip-show:hover {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  display: inline;
+}
+.tool-tip-text {
+}
 
 .custom-color {
-  border-radius: 5px;
-  padding: 3px;
   background-color: cornflowerblue;
+  width: 100%;
 }
 
 .delete-task:hover {
   cursor: pointer;
-  transition: 0.4s;
+  transition: 0.25s;
 }
 .delete-list-btn {
   z-index: 2;
-  transition: 0.4s;
+  transition: 0.25s;
   font-size: large;
   display: flex;
   justify-content: center;
@@ -34,10 +56,11 @@ main {
 }
 .delete-list-btn:hover {
   transition: 0.4s;
+  cursor: pointer;
   background: rgb(255, 255, 255);
-  font-size: xx-large;
-  top: -25px;
-  right: -25px;
-  min-width: 60px;
-  min-height: 60px;
+  font-size: x-large;
+  top: -23px;
+  right: -23px;
+  min-width: 56px;
+  min-height: 56px;
 }

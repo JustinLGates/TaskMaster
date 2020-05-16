@@ -18,8 +18,8 @@ class ListService {
       }
     });
   }
-  addList(name) {
-    let newList = new List(name);
+  addList(list) {
+    let newList = new List(list);
     Store.State.lists.push(newList);
   }
   deleteList(id) {

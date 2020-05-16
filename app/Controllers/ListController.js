@@ -5,6 +5,7 @@ function _drawLists() {
   let template = "";
   _Store.State.lists.forEach((l) => (template += l.ListTemplate));
   document.getElementById("lists").innerHTML = template;
+
   _Store.saveState();
 }
 
@@ -14,14 +15,18 @@ export default class ListController {
   }
   addList(event) {
     event.preventDefault();
-    let name = { name: event.target.listName.value };
-    ListService.addList(name);
+    let form = event.target;
+    let list = { name: form.listName.value, color: form.color.value };
+    ListService.addList(list);
     _drawLists();
+
     event.target.reset();
   }
   deleteList(id) {
-    ListService.deleteList(id);
-    _drawLists();
+    if (window.confirm("Are you sure you want to delete your list?")) {
+      ListService.deleteList(id);
+      _drawLists();
+    }
   }
   addTask(event, id) {
     event.preventDefault();

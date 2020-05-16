@@ -14,12 +14,13 @@ function _loadState() {
   if (data) {
     data.lists.forEach((list, index) => {
       let tasks = [];
+      let color = list.titleColor;
       list.tasks.forEach((task) => {
         tasks.push(new Task(task));
       });
       _state.lists.push(new List(list));
       _state.lists[index].tasks = tasks;
-      console.log(list);
+      _state.lists[index].titleColor = color;
     });
     // data.lists = data.lists.map((l) => new List(l));
     // _state = data;
