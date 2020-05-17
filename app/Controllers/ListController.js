@@ -22,10 +22,10 @@ export default class ListController {
     event.target.reset();
   }
   deleteList(id) {
-    // if (window.confirm("Are you sure you want to delete your list?")) {
-    //   ListService.deleteList(id);
-    //   _drawLists();
-    // }
+    if (window.confirm("Are you sure you want to delete your list?")) {
+      ListService.deleteList(id);
+      _drawLists();
+    }
   }
   addTask(event, id) {
     event.preventDefault();
@@ -37,5 +37,8 @@ export default class ListController {
   deleteTask(taskId, listId) {
     ListService.deleteTask(taskId, listId);
     _drawLists();
+  }
+  taskDone(taskId, listId) {
+    ListService.taskDone(taskId, listId);
   }
 }

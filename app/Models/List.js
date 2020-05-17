@@ -53,7 +53,12 @@ export default class List {
     this.tasks.forEach((t) => {
       template += `
       <div class="d-flex justify-content-between">
-      <li class="d-inline pl-3 ">${t.text}</li>
+      <div class="pl-2">
+      <input onclick="app.listController.taskDone('${t.id}','${
+        this.id
+      }')" type="checkbox" ${t.done ? "checked" : ""} name="done" id="done" />
+      <li class="d-inline">${t.text}</li>
+      </div>
       <p onclick="app.listController.deleteTask('${t.id}','${this.id}')"
       class="delete-task text-danger d-inline  pr-3">
       <i class="far fa-trash-alt"></i>

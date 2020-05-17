@@ -15,8 +15,11 @@ function _loadState() {
     data.lists.forEach((list, index) => {
       let tasks = [];
       let color = list.titleColor;
-      list.tasks.forEach((task) => {
+      list.tasks.forEach((task, i) => {
+        let done = task.done;
         tasks.push(new Task(task));
+        tasks[i].done = done;
+        console.log(tasks[i]);
       });
       _state.lists.push(new List(list));
       _state.lists[index].tasks = tasks;

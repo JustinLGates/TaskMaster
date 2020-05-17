@@ -5,5 +5,6 @@ export default class Task {
     this.id = generateId();
     this.text = data.text;
     this.listId = data.listId;
+    this.done = data.done;
   }
 }

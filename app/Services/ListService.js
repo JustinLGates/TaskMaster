@@ -2,8 +2,16 @@ import List from "../Models/List.js";
 import Store from "../store.js";
 import store from "../store.js";
 import Task from "../Models/task.js";
-//Public
+
 class ListService {
+  taskDone(taskId, listId) {
+    let currentList = store.State.lists.find((l) => l.id == listId);
+    let tasks = currentList.tasks;
+    let task = tasks.find((t) => t.id == taskId);
+    task.done ? (task.done = false) : (task.done = true);
+    store.saveState();
+    console.log("done is: " + task.done);
+  }
   deleteTask(taskId, listId) {
     let currentList = store.State.lists.find((l) => l.id == listId);
     let tasks = currentList.tasks;
@@ -23,16 +31,10 @@ class ListService {
     Store.State.lists.push(newList);
   }
   deleteList(id) {
-    console.log("delete" + id);
-
     let index = store.State.lists.findIndex((li) => li.id == id);
     console.log(index);
     store.State.lists.splice(index, 1);
   }
-  //TODO  Here is where we handle all of our business logic,
-  //given the information you need in the controller,
-  //what methods will you need to do when this class is first 'constructed'?
-  //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
 }
 
 const SERVICE = new ListService();
