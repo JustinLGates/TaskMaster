@@ -1,7 +1,7 @@
 import List from "../Models/List.js";
 import Store from "../store.js";
 import store from "../store.js";
-import Task from "../Models/task.js";
+import Task from "../Models/Task.js";
 
 class ListService {
   taskDone(taskId, listId) {
