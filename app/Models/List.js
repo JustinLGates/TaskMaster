@@ -9,25 +9,29 @@ export default class List {
   }
 
   get ListTemplate() {
-    return `<div class=" card shadow bg-light text-dark m-3 ">
+    let template = "";
+    template += `<div class=" card shadow bg-dark text-light  mt-4 ml-1 mr-1 PL-1 PR-1 ">
     <div >
-  <p
+  <p 
     onclick="app.listController.deleteList('${this.id}')"
-    class="delete-list-btn text-danger shadow"
+    class="delete-list-btn text-danger"
   >
     <i class="far fa-trash-alt"></i>
   </p>
-  <h3 style="background-color: ${this.titleColor};" class="  rounded-bottom text-light pl-3">${this.name}</h3>
+  <h3 style="background-color: ${this.titleColor};" class=" text-light pl-2">${this.name}</h3>
   <div>
-    <div >
-      ${this.taskTemplate}
+    <div>
+    
+    ${this.taskTemplate}
+    
     </div>
     <form
-      class="pt-2 pl-2 pr-2"
+      class="pt-2 pl-2 pr-2 "
       onsubmit="app.listController.addTask(event,'${this.id}')"
     >
-      <div class="form-row align-items-center">
+      <div class="form-row ">
         <div class="col-auto">
+
           <input
             type="text"
             class="form-control mb-2 input-outline-primary"
@@ -47,24 +51,52 @@ export default class List {
     </div>
   </div>
 </div>`;
+
+    return template;
   }
   get taskTemplate() {
     let template = "";
     this.tasks.forEach((t) => {
-      template += `
-      <div class="d-flex justify-content-between">
-      <div class="pl-2">
-      <input onclick="app.listController.taskDone('${t.id}','${
-        this.id
-      }')" type="checkbox" ${t.done ? "checked" : ""} name="done" id="done" />
-      <li class="d-inline">${t.text}</li>
+      template += `<div
+class="d-flex justify-content-between
+ s-card bg-light text-dark ml-2 mt-3 mr-2">
+
+   <div class="p-1 m-1"> 
+      <input 
+      onclick="app.listController.taskDone('${t.id}','${this.id}')" 
+      type="checkbox"
+      ${t.done ? "checked" : ""} 
+      name ="done" id="done" />
       </div>
-      <p onclick="app.listController.deleteTask('${t.id}','${this.id}')"
-      class="delete-task text-danger d-inline  pr-3">
-      <i class="far fa-trash-alt"></i>
+
+    <div class="p-1 m-1">
+      <p>${t.text}</p>
+    </div>
+    <div
+      class="p-1 m-1 text-danger">
+      <p onclick="app.listController.deleteTask('${t.id}','${this.id}')">
+        <i class="delete-task far fa-trash-alt"></i>
       </p>
-      </div>`;
+    </div>
+</div>
+`;
     });
+
     return template;
   }
 }
+
+// <div class="d-flex justify-content-between">
+// <div class="pl-2">
+// <input onclick="app.listController.taskDone('${t.id}','${
+//   this.id
+// }')" type="checkbox" ${t.done ? "checked" : ""} name="done" id="done" />
+// <p class=" wrap-word">${t.text}</p>
+// </div>
+// <p onclick="app.listController.deleteTask('${t.id}','${this.id}')"
+// class="delete-task text-danger d-inline  pr-3">
+// <i class="far fa-trash-alt"></i>
+// </p>
+// </div>`;
+
+// `

@@ -2,7 +2,9 @@ import ListService from "../Services/ListService.js";
 import _Store from "../store.js";
 function _drawLists() {
   let template = "";
-  _Store.State.lists.forEach((l) => (template += l.ListTemplate));
+  _Store.State.lists.forEach((l) => {
+    template += l.ListTemplate;
+  });
   document.getElementById("lists").innerHTML = template;
 
   _Store.saveState();
