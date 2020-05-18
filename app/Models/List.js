@@ -85,18 +85,3 @@ class="d-flex justify-content-between
     return template;
   }
 }
-
-// <div class="d-flex justify-content-between">
-// <div class="pl-2">
-// <input onclick="app.listController.taskDone('${t.id}','${
-//   this.id
-// }')" type="checkbox" ${t.done ? "checked" : ""} name="done" id="done" />
-// <p class=" wrap-word">${t.text}</p>
-// </div>
-// <p onclick="app.listController.deleteTask('${t.id}','${this.id}')"
-// class="delete-task text-danger d-inline  pr-3">
-// <i class="far fa-trash-alt"></i>
-// </p>
-// </div>`;
-
-// `

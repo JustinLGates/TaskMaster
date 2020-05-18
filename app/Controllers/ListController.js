@@ -37,7 +37,9 @@ export default class ListController {
     _drawLists();
   }
   deleteTask(taskId, listId) {
-    ListService.deleteTask(taskId, listId);
+    if (window.confirm("Are you sure you want to delete your task?")) {
+      ListService.deleteTask(taskId, listId);
+    }
     _drawLists();
   }
   taskDone(taskId, listId) {
